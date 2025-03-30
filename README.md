@@ -1,6 +1,6 @@
-# portfolio
+# **MY PORTFOLIO**
 
-# **Hello and welcome to My Portfolio!**
+# **Hello and welcome to my Portfolio!**
 
 This site showcases my skills, experiences, projects, and qualifications, offering a dynamic view of my professional journey and personal interests.
 
