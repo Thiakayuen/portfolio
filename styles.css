@@ -10,8 +10,8 @@ body {
 /* Menu container */
 .menu-container {
   position: fixed; 
-  top: 80px; 
-  left: 150px; 
+  top: 40px; 
+  left: 50px; 
   z-index: 1001; 
 }
 
@@ -31,17 +31,49 @@ body {
   transition: background 0.3s ease-in-out, opacity 0.3s ease;
 }
 
-@media(max-width: 768px) {
-  .menu-container {
-    top: 50px;
-    left: 30px;
-  }
+.hidden {
+  opacity: 0; 
+  transform: translateY(-10px); 
+  pointer-events: none; 
 }
 
-/* Ensure the hamburger stays on the left */
-.menu-icon span:first-child {
-  font-size: 36px;
-}
+@media(max-width: 768px) {
+  .menu-container {
+    top: 40px;
+    left: 10px;
+    width: 90px !important;
+  }
+
+  .menu-icon {
+    font-size: 20px; 
+    height: 40px; 
+    padding: 0 15px;
+  }
+
+  .menu-name {
+    font-size: 11px !important;  
+    font-weight: lighter;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 40px;
+    left: 10px;
+    width: 120px !important; 
+    max-width: 300px; 
+    background: rgb(255, 0, 127) !important; 
+  }
+
+  /* Sidebar links */
+  .sidebar a {
+    display: block; 
+    color: white;
+    padding: 5px 5px !important;
+    text-decoration: none;
+    font-size: 14px !important;
+    transition: 0.3s;
+  }
+} 
 
 .menu-name {
   font-size: 20px;
@@ -350,7 +382,7 @@ body {
     font-size: 18px;
   }
   .skill .progress-bar {
-    height: 15px;
+    height: 20px;
   }
   .skill .progress {
     font-size: 10px;
@@ -619,9 +651,10 @@ body {
 .service-item {
   background: rgb(245, 232, 232);
   padding: 20px;
-  border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  border-radius: 8px;
+  border-left: 5px solid rgb(255, 0, 127);
 }
 
 .service-item img {
@@ -778,7 +811,7 @@ footer a {
     transition: transform 0.3s;
   }
   footer .contact-me .contact-icons p {
-    font-size: 16px;
+    font-size: 12px;
   }
   .contact-icons p a {
     color: white;
@@ -846,6 +879,15 @@ footer p {
   height: 40px;
   margin: 0 10px;
   transition: transform 0.3s;
+}
+
+.contact-icons p a {
+  color: white;
+}
+
+.contact-icons p a:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .contact-icons img:hover {
