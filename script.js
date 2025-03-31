@@ -28,9 +28,6 @@ document.getElementById("hamburger").addEventListener("click", function () {
   document.getElementById("closeSidebar").addEventListener("click", function () {
     document.getElementById("sidebar").classList.remove("open");
   });
-  
-
-
 
 
 const cursorCircle = document.querySelector(".cursor-circle");
@@ -40,5 +37,19 @@ document.addEventListener("mousemove", (e) => {
   cursorCircle.style.top = `${e.clientY}px`;
 });
 
+let timer;
+const hamburger = document.getElementById("hamburger");
 
+window.addEventListener("scroll", () => {
+    // Hide the hamburger menu when scrolling
+    hamburger.style.opacity = "0";
+    
+    // Clear any previous timer
+    clearTimeout(timer);
+
+    // Set a timer to show the hamburger when scrolling stops
+    timer = setTimeout(() => {
+        hamburger.style.opacity = "1";
+    }, 500); // Adjust delay as needed
+});
 

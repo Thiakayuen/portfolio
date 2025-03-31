@@ -7,12 +7,6 @@ body {
   font-size: 16px;
 }
 
-@media (max-width: 768px) {
-  body {
-      font-size: 11.2px; 
-  }
-}
-
 /* Menu container */
 .menu-container {
   position: fixed; 
@@ -24,40 +18,53 @@ body {
 .menu-icon {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 50px; 
-  background: black;
-  color: rgb(255, 0, 127);
+  justify-content: space-between; 
+  width: 100%; 
+  height: 50px;
+  background: rgb(255, 0, 127);
+  color: black;
   font-size: 36px;
   cursor: pointer;
-  border-radius: 10px 10px 0 0; 
-  border: none; 
-  transition: background 0.3s ease-in-out;
-  position: relative; 
+  border-radius: 10px 10px 0 0;
+  border: none;
+  padding: 0 20px; 
+  transition: background 0.3s ease-in-out, opacity 0.3s ease;
 }
 
-.close-btn {
+@media(max-width: 768px) {
+  .menu-container {
+    top: 50px;
+    left: 30px;
+  }
+}
+
+/* Ensure the hamburger stays on the left */
+.menu-icon span:first-child {
+  font-size: 36px;
+}
+
+.menu-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+/* .close-btn {
   position: absolute;
   top: 10px;
   right: 15px;
   font-size: 60px;
   cursor: pointer;
-  color: rgb(255, 0, 127);
-}
-
-.menu-container.open .menu-icon {
-  background: black; 
-}
-
+  color: black;
+} */
 
 /* Sidebar */
 .sidebar {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 200px;
-  background: black;
+  width: 230px;
+  background: rgb(255, 0, 127);
   padding-top: 20px;
   transition: transform 0.3s ease-in-out;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
@@ -74,7 +81,7 @@ body {
 .sidebar a {
   display: inline-block;
   color: white;
-  padding: 15px 20px;
+  padding: 10px 20px;
   text-decoration: none;
   font-size: 18px;
   transition: 0.3s;
@@ -87,7 +94,7 @@ body {
   bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: rgb(255, 0, 127);
+  background-color: white;
   transition: width 0.3s ease-in-out;
 }
 
@@ -96,7 +103,7 @@ body {
 }
 
 .sidebar a:hover {
-  color: rgb(255, 0, 127);
+  color: black;
 }
 
 .sidebar ul {
@@ -146,9 +153,19 @@ body {
   z-index: 2;
 }
 
-@media(max-width: 768px) {
-  .hero h2 {
-    font-size: 30px;
+/* Mobile View Adjustments */
+@media screen and (max-width: 768px) {
+  .hero .hero-text h1 {
+    font-size: 20px;
+  }
+
+  .hero .hero-text h2 {
+    font-size: 36px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+    padding: 0 10px; 
   }
 }
 
@@ -215,6 +232,27 @@ body {
 
 
 /* About Me Section */
+/* Mobile view */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column-reverse; 
+    text-align: center;
+  }
+
+  .about-text {
+    padding-right: 0; 
+  }
+
+  .about-text h3, 
+  .about-text p {
+    text-align: center;
+  }
+}
+
+.about-me .container p {
+  font-size: 20px;
+}
+
 .about-me {
   background: url('portfilio.jpg') no-repeat center center/cover;; 
   color: white;
@@ -258,11 +296,13 @@ body {
   font-size: 30px;
   color: rgb(255, 0, 127);
   margin-top: 20px;
+  text-align: center;
 }
 
 .about-text p {
   font-size: 20px;
   line-height: 1.8;
+  text-align: center;
 }
 
 .about-image {
@@ -280,7 +320,7 @@ body {
 /* Skills Section */
 .skills {
   max-width: 600px;
-  margin: 60px auto 0 auto;
+  margin: auto;
   text-align: center;
   padding: 20px;
 }
@@ -361,7 +401,7 @@ body {
 }
 
 .timeline-item {
-  background: white;
+  background: rgb(245, 232, 232);
   padding: 20px;
   border-left: 5px solid rgb(255, 0, 127);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -425,13 +465,14 @@ body {
 }
 
 .portfolio-item {
-  background: transparent;
+  background: rgb(56, 48, 48);
   padding: 20px;
   border-left: 5px solid #ff0066;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   text-align: left;
   color: white;
+  margin: 20px 0;
 }
 
 .portfolio-item h4 {
@@ -502,7 +543,7 @@ body {
 }
 
 .service-item {
-  background: white;
+  background: rgb(245, 232, 232);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -583,7 +624,7 @@ body {
 .contact-intro {
   font-size: 18px;
   margin-bottom: 40px;
-  color: #ddd;
+  color: grey;
 }
 
 /* Contact Form */
@@ -591,22 +632,36 @@ form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  align-items: center;
+  align-items: stretch;
+  width: 100%;
+}
+
+.form-group {
+  width: 100%;
 }
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
+  width: 100%; 
   padding: 12px;
-  border: 2px solid rgb(255, 0, 127);
-  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid gray;
   font-size: 16px;
-  color: black;
+  color: white;
+  outline: none;
+  box-sizing: border-box; 
+  background: transparent;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom: 2px solid rgb(255, 0, 127);
 }
 
 .form-group textarea {
   resize: none;
 }
+
 
 button {
   background: transparent;
