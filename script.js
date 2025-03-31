@@ -30,26 +30,29 @@ document.getElementById("hamburger").addEventListener("click", function () {
   });
 
 
-const cursorCircle = document.querySelector(".cursor-circle");
+  let timer;
+  const hamburger = document.getElementById("hamburger");
+  
+  window.addEventListener("scroll", () => {
+      if (!hamburger) return; // Ensure element exists
+  
+      // Hide the hamburger menu when scrolling
+      hamburger.style.opacity = "0";
+      hamburger.style.pointerEvents = "none";
+  
+      // Clear any previous timer
+      clearTimeout(timer);
+  
+      // Set a timer to show the hamburger when scrolling stops
+      timer = setTimeout(() => {
+          hamburger.style.opacity = "1";
+          hamburger.style.pointerEvents = "auto";
+      }, 500); // Adjust delay as needed
+  });
 
-document.addEventListener("mousemove", (e) => {
-  cursorCircle.style.left = `${e.clientX}px`;
-  cursorCircle.style.top = `${e.clientY}px`;
-});
 
-let timer;
-const hamburger = document.getElementById("hamburger");
 
-window.addEventListener("scroll", () => {
-    // Hide the hamburger menu when scrolling
-    hamburger.style.opacity = "0";
-    
-    // Clear any previous timer
-    clearTimeout(timer);
 
-    // Set a timer to show the hamburger when scrolling stops
-    timer = setTimeout(() => {
-        hamburger.style.opacity = "1";
-    }, 500); // Adjust delay as needed
-});
 
+  
+  

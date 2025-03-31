@@ -49,15 +49,6 @@ body {
   color: #FFFFFF;
 }
 
-/* .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 60px;
-  cursor: pointer;
-  color: black;
-} */
-
 /* Sidebar */
 .sidebar {
   position: absolute;
@@ -246,8 +237,24 @@ body {
   .about-text h3, 
   .about-text p {
     text-align: center;
+    font-size: 16px;
+  }
+
+  .about-me .container p {
+    font-size: 16px !important;
+  }
+
+  .about-me h2 {
+    font-size: 26px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .about-content .about-text h3 {
+    font-size: 22px;
+    margin-top: 20px;
   }
 }
+
 
 .about-me .container p {
   font-size: 20px;
@@ -256,7 +263,7 @@ body {
 .about-me {
   background: url('portfilio.jpg') no-repeat center center/cover;; 
   color: white;
-  padding: 100px 20px;
+  padding: 50px 20px;
   text-align: center;
 }
 
@@ -272,7 +279,7 @@ body {
 }
 
 .about-me .intro-text {
-  font-size: 22px;
+  font-size: 20px;
   max-width: 900px;
   margin: auto;
   line-height: 1.8;
@@ -283,7 +290,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .about-text {
@@ -331,16 +338,30 @@ body {
   margin-bottom: 20px;
 }
 
-.skill {
-  margin: 15px 0;
-  text-align: left;
-}
 @media(max-width: 768px) {
+  .skills h3 {
+    font-size: 22px;
+  }
   .skills .skill {
     text-align: center;
     margin: 15px 0;
   }
+  .skills .skill span {
+    font-size: 18px;
+  }
+  .skill .progress-bar {
+    height: 15px;
+  }
+  .skill .progress {
+    font-size: 10px;
+  }
 }
+
+.skill {
+  margin: 15px 0;
+  text-align: left;
+}
+
 .skill span {
   font-size: 20px;
   font-weight: bold;
@@ -383,6 +404,24 @@ body {
   color: black;
   padding: 80px 20px;
   text-align: center;
+}
+
+@media(max-width: 768px) {
+  .journey {
+    padding: 30px 20px;
+  }
+  .journey .container h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .timeline .timeline-item h3 {
+    font-size: 18px;
+  }
+
+  .timeline .timeline-item p {
+    font-size: 16px;
+  }
 }
 
 .journey .container {
@@ -440,6 +479,25 @@ body {
 .portfolio .container {
   max-width: 900px;
   margin: auto;
+}
+
+@media(max-width: 768px) {
+  .portfolio {
+    padding: 30px 20px;
+  }
+  .portfolio .container h2 {
+    font-size: 26px;
+  }
+  .container .portfolio-category h3 {
+    font-size: 20px;
+  }
+   .portfolio-items .portfolio-item h4 {
+    font-size: 18px;
+  }
+
+  .portfolio-items .portfolio-item p {
+    font-size: 16px;
+  }
 }
 
 .portfolio h2 {
@@ -509,8 +567,6 @@ body {
 }
 
 
-
-
 /* Services Section */
 .services {
   background: #f9f9f9;
@@ -522,6 +578,24 @@ body {
 .services .container {
   max-width: 900px;
   margin: auto;
+}
+
+@media(max-width: 768px) {
+  .services {
+    padding: 30px 20px;
+  }
+  .services .container h2 {
+    font-size: 26px;
+  }
+  .container .services-intro {
+    font-size: 16px;
+  }
+  .service-list .service-item h3 {
+    font-size: 20px;
+  }
+  .service-list .service-item p {
+    font-size: 16px;
+  }
 }
 
 .services h2 {
@@ -568,17 +642,6 @@ body {
   color: #333;
 }
 
-@media (min-width: 768px) {
-  .service-list {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .service-item {
-    width: 45%;
-  }
-}
-
 
 /* Contact Section */
 .contact {
@@ -598,8 +661,8 @@ body {
 
 @media (max-width: 768px) {
   .contact {
+    padding: 30px 20px;
     margin: 10px;
-    padding: 40px 10px;
   }
   .contact .container {
     max-width: 100%;
@@ -607,13 +670,23 @@ body {
     padding: 10px; 
     box-sizing: border-box;
   }
+  .contact .container h2 {
+    font-size: 26px;
+  }
+  .contact .container p {
+    font-size: 16px;
+  }
   form {
     max-width: 100%;
     margin: 0 auto; 
     text-align: center;
+    font-size: 16px;
+  }
+   form button {  
+    font-size: 12px;
+    margin: 20px 60px;
   }
 }
-
 
 .contact h2 {
   font-size: 36px;
@@ -662,7 +735,6 @@ form {
   resize: none;
 }
 
-
 button {
   background: transparent;
   color: white;
@@ -679,24 +751,6 @@ button:hover {
   background: rgba(255, 0, 127, 0.2); 
 }
 
-.social-icons {
-  margin-top: 30px;
-}
-
-.social-icons a {
-  margin: 0 10px;
-}
-
-.social-icons img {
-  width: 30px;
-  height: 30px;
-  transition: 0.3s ease-in-out;
-}
-
-.social-icons a:hover img {
-  transform: scale(1.2);
-}
-
 
 /* Footer */
 footer {
@@ -708,6 +762,27 @@ footer {
 footer a {
   display: inline-block;
   margin: 10px;
+}
+
+@media(max-width: 768px) {
+  footer {
+    padding: 20px 20px;
+  }
+  footer .contact-me h3 {
+    font-size: 20px;
+  }
+  footer .contact-me .contact-icons img {
+    width: 18px; 
+    height: auto;
+    filter: invert(1); 
+    transition: transform 0.3s;
+  }
+  footer .contact-me .contact-icons p {
+    font-size: 16px;
+  }
+  .contact-icons p a {
+    color: white;
+  }
 }
 
 footer img {
@@ -731,26 +806,6 @@ footer p {
   text-decoration: none;
   color: white;
 }
-
-
-
-
-/* Cursor Circle */
-.cursor-circle {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  background: transparent;
-  border: 2px solid rgb(255, 0, 127); 
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.30s linear;
-  -webkit-backdrop-filter: blur(5px); 
-  backdrop-filter: blur(5px); 
-  z-index: 9999;
-}
-
 
 
 .contact-me {
@@ -796,4 +851,8 @@ footer p {
 .contact-icons img:hover {
   transform: scale(1.2);
 }
+
+
+
+
 
