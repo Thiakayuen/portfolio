@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.querySelector(".menu-icon");
     const sidebar = document.querySelector(".sidebar");
-    const overlay = document.querySelector(".overlay");
+    // const overlay = document.querySelector(".overlay");
 
     menuIcon.addEventListener("click", function () {
         sidebar.classList.add("active");
-        overlay.classList.add("active");
+        // overlay.classList.add("active");
     });
 
-    overlay.addEventListener("click", function () {
-        sidebar.classList.remove("active");
-        overlay.classList.remove("active");
-    });
+    // overlay.addEventListener("click", function () {
+    //     sidebar.classList.remove("active");
+    //     overlay.classList.remove("active");
+    // });
 });
 
 document.getElementById("hamburger").addEventListener("click", function () {
@@ -31,30 +31,45 @@ window.addEventListener("scroll", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
 
-// Popup Message
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
+        let form = this; 
+        let formData = new FormData(form); 
 
-    let formData = new FormData(this); // Get form data
-
-    fetch("https://formspree.io/f/mqapdorq", {
-        method: "POST",
-        body: formData,
-        headers: { "Accept": "application/json" }
-    })
-    .then(response => {
-        if (response.ok) {
-            document.getElementById("popup-message").style.display = "block"; // Show pop-up
-            setTimeout(() => { 
-                document.getElementById("popup-message").style.display = "none"; 
-            }, 3000); // Hide pop-up after 3 seconds
-            this.reset(); // Clear form
-        } else {
-            alert("Message failed to send!");
-        }
-    })
-    .catch(error => alert("Something went wrong!"));
+        fetch("https://formspree.io/f/mqapdorq", {
+            method: "POST",
+            body: formData, // Send FormData directly
+            headers: {
+                'Accept': 'application/json' // Important for Formspree's response
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                let popup = document.getElementById("popup-message");
+                if (popup) {
+                    popup.style.display = "block"; 
+                    setTimeout(() => { 
+                        popup.style.display = "none"; 
+                    }, 3000); 
+                }
+                form.reset(); 
+            } else {
+                response.json().then(data => {
+                  if (Object.hasOwn(data, 'errors')) {
+                    //errors from formspree
+                    console.log(data["errors"].map(error => error["message"]).join(", "));
+                    alert("Error: " + data["errors"].map(error => error["message"]).join(", "));
+                  } else {
+                    console.log("Oops! There was a problem submitting your form");
+                    alert("Oops! There was a problem submitting your form");
+                  }
+                })
+            }
+        })
+        .catch(error => alert("Something went wrong!"));
+    });
 });
 
 
