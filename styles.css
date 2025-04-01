@@ -266,23 +266,26 @@ body {
     padding-right: 0; 
   }
 
-  .about-text h3, 
+  .about-text h3 {
+    text-align: center;
+    font-size: 18px;
+  } 
   .about-text p {
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .about-me .container p {
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
 
   .about-me h2 {
-    font-size: 26px !important;
+    font-size: 22px !important;
     margin-bottom: 15px !important;
   }
 
   .about-content .about-text h3 {
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 20px;
   }
 }
@@ -372,14 +375,14 @@ body {
 
 @media(max-width: 768px) {
   .skills h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
   .skills .skill {
     text-align: center;
     margin: 15px 0;
   }
   .skills .skill span {
-    font-size: 18px;
+    font-size: 16px;
   }
   .skill .progress-bar {
     height: 20px;
@@ -429,31 +432,12 @@ body {
 .react { width: 70%; background: #9b59b6; }
 
 
-
 /* Professional Journey Section */
 .journey {
-  background: #f9f9f9; 
-  color: black;
+  background: #f9f9f9;
+  color: #444;
   padding: 80px 20px;
   text-align: center;
-}
-
-@media(max-width: 768px) {
-  .journey {
-    padding: 30px 20px;
-  }
-  .journey .container h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
-  }
-
-  .timeline .timeline-item h3 {
-    font-size: 18px;
-  }
-
-  .timeline .timeline-item p {
-    font-size: 16px;
-  }
 }
 
 .journey .container {
@@ -467,8 +451,17 @@ body {
   margin-bottom: 30px;
 }
 
+.section-headings {
+  font-size: 26px;
+  color: rgb(255, 0, 127);
+  text-align: center;
+  margin: 40px 0 20px;
+  font-weight: bold;
+}
+
 .timeline {
   text-align: left;
+  margin-bottom: 40px;
 }
 
 .timeline-item {
@@ -480,8 +473,8 @@ body {
   border-radius: 8px;
 }
 
-.timeline-item h3 {
-  font-size: 24px;
+.timeline-item h4 {  
+  font-size: 22px;
   color: rgb(255, 0, 127);
   margin-bottom: 5px;
 }
@@ -489,7 +482,7 @@ body {
 .timeline-item .year {
   display: block;
   font-size: 16px;
-  color: #333;
+  color: grey;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -499,12 +492,38 @@ body {
   line-height: 1.6;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .journey {
+    padding: 20px 20px;
+  }
+
+  .journey h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .section-headings {
+    font-size: 18px;
+    margin: 30px 0 15px;
+  }
+
+  .timeline-item h4 {  
+    font-size: 16px;
+  }
+
+  .timeline-item p {
+    font-size: 15px;
+  }
+}
+
+
 
 /* Portfolio Section */
 .portfolio {
   background: url('portfilio.jpg') no-repeat center center/cover;
   color: #fff;
-  padding: 40px 20px;
+  padding: 20px 20px;
   text-align: center;
 }
 
@@ -518,17 +537,20 @@ body {
     padding: 30px 20px;
   }
   .portfolio .container h2 {
-    font-size: 26px;
+    font-size: 22px;
   }
   .container .portfolio-category h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
    .portfolio-items .portfolio-item h4 {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .portfolio-items .portfolio-item p {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  .resume-btn {
+    font-size: 14px !important;
   }
 }
 
@@ -617,16 +639,16 @@ body {
     padding: 30px 20px;
   }
   .services .container h2 {
-    font-size: 26px;
+    font-size: 22px;
   }
   .container .services-intro {
-    font-size: 16px;
+    font-size: 15px;
   }
   .service-list .service-item h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .service-list .service-item p {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -704,16 +726,16 @@ body {
     box-sizing: border-box;
   }
   .contact .container h2 {
-    font-size: 26px;
+    font-size: 22px;
   }
   .contact .container p {
-    font-size: 16px;
+    font-size: 15px;
   }
   form {
     max-width: 100%;
     margin: 0 auto; 
     text-align: center;
-    font-size: 16px;
+    font-size: 15px;
   }
    form button {  
     font-size: 12px;
