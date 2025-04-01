@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.querySelector(".menu-icon");
     const sidebar = document.querySelector(".sidebar");
-    // const overlay = document.querySelector(".overlay");
+    const overlay = document.querySelector(".overlay");
 
     menuIcon.addEventListener("click", function () {
         sidebar.classList.add("active");
-        // overlay.classList.add("active");
+        overlay.classList.add("active");
     });
 
-    // overlay.addEventListener("click", function () {
-    //     sidebar.classList.remove("active");
-    //     overlay.classList.remove("active");
-    // });
+    overlay.addEventListener("click", function () {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+    });
 });
 
 document.getElementById("hamburger").addEventListener("click", function () {

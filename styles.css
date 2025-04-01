@@ -762,6 +762,8 @@ form {
 .form-group input:focus,
 .form-group textarea:focus {
   border-bottom: 2px solid rgb(255, 0, 127);
+  background-color: white;
+  color: black;
 }
 
 .form-group textarea {
