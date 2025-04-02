@@ -179,16 +179,24 @@ body {
 /* Mobile View Adjustments */
 @media screen and (max-width: 768px) {
   .hero .hero-text h1 {
-    font-size: 20px;
+    font-size: 18px !important;
   }
 
   .hero .hero-text h2 {
-    font-size: 36px;
+    font-size: 26px !important;
   }
 
   .hero-text p {
-    font-size: 18px;
-    padding: 0 10px; 
+    font-size: 15px !important;
+    padding: 0 10px !important; 
+  }
+  .button {
+    font-size: 15px !important;
+    font-weight: lighter !important;
+  }
+  .social-icons img {
+    width: 20px !important;
+    height: 20px !important; 
   }
 }
 
