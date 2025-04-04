@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         fetch("https://formspree.io/f/mqapdorq", {
             method: "POST",
-            body: formData, // Send FormData directly
+            body: formData, 
             headers: {
-                'Accept': 'application/json' // Important for Formspree's response
+                'Accept': 'application/json' 
             }
         })
         .then(response => {
