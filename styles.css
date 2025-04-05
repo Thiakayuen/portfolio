@@ -7,8 +7,9 @@ body {
   font-size: 16px;
 }
 
+
 /* Desktop styles */
-@media (min-width: 769px) {
+@media (min-width: 931px) {
   header {
     position: sticky;
     top: 0;
@@ -104,10 +105,7 @@ body {
 }
 
 
-
-
-
-@media (max-width: 768px) {
+@media (max-width: 930px) {
   /* Menu container */
   .menu-container {
     position: fixed; 
@@ -422,9 +420,10 @@ body {
 }
 
 .about-image img {
-  width: 320px;
+  max-width: 100%;
   border-radius: 15px; 
   box-shadow: 0 6px 15px rgb(255, 0, 127);
+  width: 90%;
 }
 
 
@@ -582,7 +581,7 @@ body {
   }
 
   .timeline-item p {
-    font-size: 15px;
+    font-size: 15px !important;
   }
 }
 
